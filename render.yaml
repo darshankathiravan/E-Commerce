@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: django-app
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn <your_project_name>.wsgi
+    autoDeploy: true
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        value: your-secret-key
+      - key: DJANGO_SETTINGS_MODULE
+        value: <your_project_name>.settings
+      - key: ALLOWED_HOSTS
+        value: your-domain.com,another-domain.com
+databases:
+  - name: postgres-db
+    type: postgres
+    plan: free
