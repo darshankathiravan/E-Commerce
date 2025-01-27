@@ -3,17 +3,20 @@ services:
     name: django-app
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn <your_project_name>.wsgi
+    buildCommand: 
+      pip install -r requirements.txt
+      python manage.py migrate
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn ecommerce.wsgi
     autoDeploy: true
     envVars:
       - key: DJANGO_SECRET_KEY
-        value: your-secret-key
+        value: django-insecure-)z8_n_n18v+77j+@-$%+4&#mgfl6esxon&*5%kda9d0h^agf64
       - key: DJANGO_SETTINGS_MODULE
-        value: <your_project_name>.settings
+        value: ecommerce.settings
       - key: ALLOWED_HOSTS
-        value: your-domain.com,another-domain.com
+        value: e-commerce-oxfl.onrender.com,another-domain.com
 databases:
-  - name: postgres-db
+  - name: ecommerce_93qm
     type: postgres
     plan: free
