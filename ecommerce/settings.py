@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("DJANGO_SECRET_KEY")
+SECRET_KEY = config("DJANGO_SECRET_KEY", default="unsafe-secret-key-for-local")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'e-commerce-oxfl.onrender.com']
 
 
 # Application definition
@@ -80,16 +80,14 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-from decouple import config, Csv
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": config("DB_NAME"),
-        "USER": config("DB_USER"),
-        "PASSWORD": config("DB_PASSWORD"),
-        "HOST": config("DB_HOST", default="localhost"),
-        "PORT": config("DB_PORT", default="5432"),
+        "NAME": config("DB_NAME", default="ecommerce"),  # Default to 'ecommerce' for local
+        "USER": config("DB_USER", default="postgres"),  # Default to 'postgres' for local
+        "PASSWORD": config("DB_PASSWORD"),  # Default to 'darshan' for local
+        "HOST": config("DB_HOST", default="127.0.0.1"),  # Default to 'localhost' for local
+        "PORT": config("DB_PORT", default="5432"),  # Default to '5432' for local
     }
 }
 
@@ -129,9 +127,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'ecommerce\static')]
+STATICFILES_DIRS = [BASE_DIR / 'ecommerce' / 'static']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+ 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
