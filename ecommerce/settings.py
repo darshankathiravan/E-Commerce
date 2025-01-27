@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("DJANGO_SECRET_KEY", default="unsafe-secret-key-for-local")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = config('DEBUG',default='False', cast=bool)
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'e-commerce-oxfl.onrender.com']
 
