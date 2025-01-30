@@ -17,7 +17,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>S.no</th>
                         <th>Product</th>
                         <th>Quantity</th>
                         <th>Price</th>
@@ -51,13 +51,12 @@
         {% else %}
             <p class="text-center">You have no orders yet.</p>
         {% endif %}
-        <div class="modal-footer">
+        <div class="row justify-content-center">
+            <h4 class="mx-5">Final Price = {{ orders.final_price }}</h4>
             <a type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="{% url 'store' %}">Back to Shopping</a>
-        </div>
-        
-    </div>
+        </div> 
+   </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

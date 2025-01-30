@@ -34,10 +34,12 @@ class Orders(View):
         
         customer = Customer.objects.get(id=customer_id)
         orders = Order.objects.filter(customer=customer).order_by('-id')
+        orders.final_price = 0
         for order in orders:
             order.product_price = order.product.price
             order.total_price = order.product_price * order.quantity  # Calculate the total price
-
+            orders.final_price = order.total_price + orders.final_price
+ 
         return render(request, 'orders.html', {'orders': orders})
 
         
