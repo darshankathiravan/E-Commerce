@@ -1,31 +1,8 @@
-# Python
-*.pyc
-*.pyo
-*.pyd
-__pycache__/
-*.db
-*.sqlite3
+# Confidential data
+.env               # Environment variables (always ignore!)
+*.db               # Database files (e.g., SQLite)
+*.sqlite3          # Django's default database
+db.sqlite3         # Common Django database name
+
+# Local logs (if they contain sensitive data)
 *.log
-
-# Django
-*.log
-staticfiles/
-media/
-db.sqlite3
-*.pot
-
-# IDEs and Editors
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Operating System files
-.DS_Store
-Thumbs.db
-
-# Environment variables
-.env
-
-# PyCharm
-.pytest_cache/
