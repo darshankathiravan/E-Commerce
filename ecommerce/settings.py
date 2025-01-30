@@ -82,14 +82,13 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "ecommerce_93qm",  # Default to 'ecommerce' for local
+        "NAME": "ecommerce_90g4",  # Default to 'ecommerce' for local
         "USER": "darshan",  # Default to 'postgres' for local
-        "PASSWORD": "6fFZcoEtP5eeCGmKnSB1DMoVAlHb6GmW",  # Default to 'darshan' for local
-        "HOST": "dpg-cub4n3jqf0us73ccmi80-a.oregon-postgres.render.com",  # Default to 'localhost' for local
+        "PASSWORD": "9XBh1MRqRkPpuLSDsCPTl5vMPcG1kngX",  # Default to 'darshan' for local
+        "HOST": "dpg-cudk79t6l47c73aesslg-a.singapore-postgres.render.com",  # Default to 'localhost' for local
         "PORT": "5432",  # Default to '5432' for local
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
