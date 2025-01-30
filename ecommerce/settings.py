@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": config("DB_NAME", default="ecommerce"),  # Default to 'ecommerce' for local
-        "USER": config("DB_USER", default="postgres"),  # Default to 'postgres' for local
-        "PASSWORD": config("DB_PASSWORD"),  # Default to 'darshan' for local
-        "HOST": config("DB_HOST", default="127.0.0.1"),  # Default to 'localhost' for local
-        "PORT": config("DB_PORT", default="5432"),  # Default to '5432' for local
+        "NAME": "ecommerce_93qm",  # Default to 'ecommerce' for local
+        "USER": "darshan",  # Default to 'postgres' for local
+        "PASSWORD": "6fFZcoEtP5eeCGmKnSB1DMoVAlHb6GmW",  # Default to 'darshan' for local
+        "HOST": "dpg-cub4n3jqf0us73ccmi80-a.oregon-postgres.render.com",  # Default to 'localhost' for local
+        "PORT": "5432",  # Default to '5432' for local
     }
 }
 
