@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os 
 from pathlib import Path
 from decouple import config, Csv
+import dj_database_url
 
 
 
@@ -79,15 +80,10 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://ecommerce_90g4_user:9XBh1MRqRkPpuLSDsCPTl5vMPcG1kngX@dpg-cudk79t6l47c73aesslg-a.singapore-postgres.render.com/ecommerce_90g4")
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "ecommerce_93qm",  # Default to 'ecommerce' for local
-        "USER": "darshan",  # Default to 'postgres' for local
-        "PASSWORD": "6fFZcoEtP5eeCGmKnSB1DMoVAlHb6GmW",  # Default to 'darshan' for local
-        "HOST": "dpg-cub4n3jqf0us73ccmi80-a.oregon-postgres.render.com",  # Default to 'localhost' for local
-        "PORT": "5432",  # Default to '5432' for local
-    }
+    'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600)
 }
 
 
