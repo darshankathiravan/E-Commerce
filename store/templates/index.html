@@ -127,8 +127,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'orders' %}">Orders</a>
                     </li>
+                    
                     <li class="nav-item">
+                        {% if request.session.name %}
                         <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        {% else %}
+                        <a class="nav-link" href="{% url 'logout' %}">Login</a>
+                        {% endif %}
                     </li>
                 </ul>
             </div>

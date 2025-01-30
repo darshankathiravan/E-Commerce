@@ -53,5 +53,6 @@ def store(request):
         'categories': categories,
         'cart' : cart,
     }
-	print('you are : ', request.session.get('email')) 
+	
+	print('you are : ', request.session.get('name')) 
 	return render(request, 'index.html', data) 
