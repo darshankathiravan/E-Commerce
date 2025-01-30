@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://ecommerce_90g4_user:9XBh1MRqRkPpuLSDsCPTl5vMPcG1kngX@dpg-cudk79t6l47c73aesslg-a.singapore-postgres.render.com/ecommerce_90g4")
 
 DATABASES = {
-    'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600)
+    'default': dj_database_url.parse(DATABASE_URL)
 }
 
 CORS_ALLOWED_ORIGINS = [
